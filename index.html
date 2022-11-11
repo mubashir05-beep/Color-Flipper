@@ -12,11 +12,14 @@
     <div class="nav">
         <p>Color Flipper</p>
         <ul>
-            <li class="simple">Simple</li>
-            <li class="hex">Hex</li>
+            <li onclick="simpleClick()" id="simple">Simple</li>
+            <li onclick="hexClick()" id="hex">Hex</li>
         </ul>
     </div>
     <div class="container">
+        <div class="text">You Selected :
+            <div class="mode">Nothing!</div>
+        </div>
         <div class="text">BACKGROUND COLOR :   
             <div class="colorName"></div>
         </div>

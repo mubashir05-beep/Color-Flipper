@@ -1,15 +1,54 @@
-const button = document.querySelector('id');
+
 const body=document.getElementsByTagName('BODY')[0];
 let colorName=document.querySelector('.colorName');
-const simpleCode=document.querySelector('simple');
-const hexCode=document.querySelector('hex');
-
+const simpleCode=document.querySelector('#simple')
+const hexCode=document.querySelector('#hex');
+let div = document.createElement("div");
+const mode=document.querySelector('.mode');
 const arrColor=['RED','BLUE','Yellow','Green','BLACK','WHITE','PINK','CYAN'];
-const clicked=()=>{
-let randNumber=Math.floor(Math.random() * arrColor.length-1);
-colorName.innerText=`: ${arrColor[randNumber]}`;
+
+let clicked=()=>{
+let randNumber=Math.floor(Math.random() * arrColor.length);
+colorName.innerText=` ${arrColor[randNumber]}`;
 body.style.background=arrColor[randNumber];
 };
+
+const simpleClick=()=>{
+    hexCode.classList.remove('highlight');
+  simpleCode.classList.toggle('highlight');
+  mode.innerText=` SIMPLE MODE`;
+  clicked=()=>{
+    let randNumber=Math.floor(Math.random() * arrColor.length);
+    colorName.innerText=`: ${arrColor[randNumber]}`;
+    body.style.background=arrColor[randNumber];
+    };
+};
+const hexClick=()=>{
+    simpleCode.classList.remove('highlight');
+    hexCode.classList.toggle('highlight');
+    clicked=()=>{mode.innerText=` HEX MODE`;
+    const randomHexCode = () => {
+        let n = (Math.random() * 0xfffff * 1000000).toString(16);
+        return '#' + n.slice(0, 6);
+      };
+    colorName.innerText=` ${randomHexCode()}`;
+    body.style.background=randomHexCode();}
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // arrays
 // document.getElementById()
 // document.querySelector()
