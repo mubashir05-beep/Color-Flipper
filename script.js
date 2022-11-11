@@ -26,7 +26,9 @@ const simpleClick=()=>{
 const hexClick=()=>{
     simpleCode.classList.remove('highlight');
     hexCode.classList.toggle('highlight');
-    clicked=()=>{mode.innerText=` HEX MODE`;
+    mode.innerText=` HEX MODE`;
+    clicked=()=>{
+     
     const randomHexCode = () => {
         let n = (Math.random() * 0xfffff * 1000000).toString(16);
         return '#' + n.slice(0, 6);
