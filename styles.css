@@ -86,9 +86,7 @@ button:hover{
     ul{
         display: block;
     }
-    body{
-        background-color: lightgreen;
-    }
+   
     li{
         padding: 2px;
     }
